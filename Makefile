@@ -2,8 +2,6 @@ NAME					= libftprintf.a
 
 SRCS					= ft_printf.c
 
-BNS_SRCS				= 
-
 OBJS					= $(SRCS:%.c=%.o)
 
 BNS_OBJS				= $(BNS_SRCS:%.c=%.o)
