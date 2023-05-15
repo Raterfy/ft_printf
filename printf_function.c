@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 16:29:11 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 23:07:24 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,31 +62,36 @@ int ft_putnbr_base(unsigned int n, char *base)
 
 int	print_char(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	print_str(char *str)
 {
-	int	i;
+	int	cpt;
 
-	i = 0;
-	while (str[i])
-		print_char(str[i++]);
-	return (i);
+	cpt = 0;
+	while (*str)
+	{
+		cpt += print_char(*str);
+		str++;
+	}
+	return (cpt);
 }
 
 int	print_pointer(void *ptr)
 {
 	unsigned long	adress;
-	int cpt;
+	int				cpt;
 
 	cpt = 0;
-	if (ptr)
+	if (!ptr)
 		cpt += print_str("nil");
-	adress = (unsigned long)ptr;
-	cpt += print_str("0x");
-	cpt += print_hexadecimal(adress, "0123456789abcdef");
+	else
+	{
+		adress = (unsigned long)ptr;
+		cpt += print_str("0x");
+		cpt += print_hexadecimal(adress, "0123456789abcdef");
+	}
 	return (cpt);
 }
 
@@ -98,8 +103,7 @@ int	print_decimal(int n)
 	if (n < 0)
 	{
 		n = -n;
-		print_char('-');
-		cpt++;
+		cpt += print_char('-');
 	}
 	if (n && n >= 10)
 		cpt += print_decimal(n / 10);
@@ -127,7 +131,7 @@ int	print_hexadecimal(unsigned int n, const char *base)
 	int	cpt;
 
 	cpt = 0;
-	if (n >= 10)
+	if (n >= 16)
 	{
 		cpt += print_hexadecimal(n / 16, base);
 		cpt += print_char(base[n % 16]);

@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:39 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 15:32:56 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 21:40:26 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
