@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 14:13:51 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 14:40:54 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,43 @@ int	print_char(char c)
 	return (1);
 }
 
-int	print_str(char *s)
+int	print_str(char *str)
 {
-	 
+	int	i;
+
+	i = 0;
+	while (str[i])
+		write(1, str[i++], 1);
+	return (i);
 }
+
+int	print_pointer(void *ptr)
+{
+	unsigned long	adress;
+	int cpt;
+
+	if (ptr)
+		return (nil);
+	cpt = 0;
+	adress = (unsigned long)ptr;
+	cpt += print_str("0x");
+	cpt += print_hexadecimal(adress, "0123456789abcdef");
+	return (cpt);
+}
+
+int	print_decimal(int n)
+{
+	int cpt;
+
+	cpt = 0;
+	if (n < 0)
+	{
+		n = -n;
+		print_char("-");
+		cpt++;
+	}
+	if (n && n >= 10)
+		cpt += print_decimal(n / 10);
+	cpt += print_char(n % 10 + '0');
+}
+
