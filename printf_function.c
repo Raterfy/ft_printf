@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 14:40:54 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 14:55:47 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,10 @@ int	print_decimal(int n)
 	if (n && n >= 10)
 		cpt += print_decimal(n / 10);
 	cpt += print_char(n % 10 + '0');
+	return (cpt);
 }
 
+int	print_unsigned_decimal(unsigned int n)
+{
+	
+}
