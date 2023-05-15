@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:34:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 15:50:04 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 16:05:41 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ int	print_format(const char *format, va_list args)
 
 int	ft_printf(const char *format, ...);
 {
+	int	cpt;
+
+	va_list args;
+	va_start(args, format);
 	if (!format)
 		return (-1);
+	cpt = 0;
+	cpt += print_format(format, args);
+	va_end(args);
+	return (cpt);
 }
