@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:34:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 16:10:40 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 16:22:54 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	print_format(const char *format, va_list args)
 	int	i;
 	int cpt;
 
+	cpt = 0;
+	i = 0;
 	while(format[i])
 	{
 		if (format[i] == '%')
@@ -60,4 +62,9 @@ int	ft_printf(const char *format, ...)
 	cpt += print_format(format, args);
 	va_end(args);
 	return (cpt);
+}
+
+int	main(void)
+{
+	
 }
