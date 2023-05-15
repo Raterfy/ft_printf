@@ -6,12 +6,11 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:24:21 by robhak            #+#    #+#             */
-/*   Updated: 2023/04/25 13:25:19 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 13:48:23 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
+#include "printf_function.h"
 
 int ft_putchar(char c)
 {
