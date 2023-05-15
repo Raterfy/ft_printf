@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 15:18:09 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 16:11:47 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	print_pointer(void *ptr)
 	int cpt;
 
 	if (ptr)
-		return (nil);
+		cpt += print_str("nil");
 	cpt = 0;
 	adress = (unsigned long)ptr;
 	cpt += print_str("0x");
