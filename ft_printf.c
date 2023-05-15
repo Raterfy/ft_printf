@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 13:24:21 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 13:48:23 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 23:14:43 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,13 @@ int ft_printf(const char *format, ...)
     }
     va_end(args);   // libération des ressources allouées à l'objet va_list
     return count;   // on renvoie le nombre de caractères affichés
+}
+
+int main(void)
+{
+    int num = 42;
+    int *p = &num;
+
+    ft_printf("%p\n", p);
+    printf("%p\n", p);
 }

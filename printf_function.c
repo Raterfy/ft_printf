@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 23:07:24 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 23:33:31 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,20 @@ int	print_hexadecimal(unsigned int n, const char *base)
 	}
 	else
 		cpt += print_char(base[n]);
+	return (cpt);
+}
+
+int ft_putnbr_base(unsigned int n, char *base)
+{
+	int cpt;
+	int base_len;
+
+	cpt = 0;
+	base_len = 0;
+	while (base[base_len])
+		base_len++;
+	if (n >= (unsigned int)base_len)
+		cpt += ft_putnbr_base(n / base_len, base);
+	cpt += print_char(base[n % base_len]);
 	return (cpt);
 }

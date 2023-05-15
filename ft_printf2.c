@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:34:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 22:59:15 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 23:35:30 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	print_format2(const char format, va_list args)
 	else if (format == 's')
 		cpt += print_str(va_arg(args, char *));
 	else if (format == 'p')
-		cpt += print_pointer(va_arg(args, void *));
+	{
+		cpt += print_str("0x");
+		cpt += ft_putnbr_base((unsigned long)va_arg(args, void *),
+				"0123456789abcdef");
+	}
 	else if (format == 'd' || format == 'i')
 		cpt += print_decimal(va_arg(args, int));
 	else if (format == 'u')
@@ -47,7 +51,7 @@ int	print_format(const char *format, va_list args)
 
 	cpt = 0;
 	i = 0;
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
