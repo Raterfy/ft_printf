@@ -6,13 +6,13 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:34:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 13:48:18 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 13:58:38 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_function.h"
 
-
 int	ft_printf(const char *, ...);
-{	
+{
+		
 }

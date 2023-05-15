@@ -6,12 +6,12 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 13:46:40 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 14:13:51 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_function.h"
-
+/*
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -57,4 +57,16 @@ int ft_putnbr_base(unsigned int n, char *base)
 	ft_putchar(base[n % base_len]);
 	cpt++;
 	return cpt;
+}
+*/
+
+int	print_char(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+int	print_str(char *s)
+{
+	 
 }
