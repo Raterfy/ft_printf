@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 14:55:47 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/15 15:06:30 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,12 @@ int	print_pointer(void *ptr)
 	return (cpt);
 }
 
-int	print_decimal(int n)
+int	print_decimal(int nbr)
 {
-	int cpt;
+	int 		cpt;
+	long int	n;
 
+	n = nbr;	
 	cpt = 0;
 	if (n < 0)
 	{
@@ -107,7 +109,17 @@ int	print_decimal(int n)
 	return (cpt);
 }
 
-int	print_unsigned_decimal(unsigned int n)
+int	print_hexadecimal(int n, int base)
 {
-	
+	int	cpt;
+
+	cpt = 0;
+	if (n >= 10)
+	{
+		cpt += print_hexadecimal(n / 10, base);
+		cpt += print_char(base[n % 10]);
+	}
+	else
+		cpt += print_char(base[n]);
+	return (cpt);
 }
