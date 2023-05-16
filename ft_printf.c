@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 17:16:37 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 18:09:35 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int	ft_printf(const char *format, ...)
 	int		cpt;
 	va_list	args;
 
-	va_start(args, format);
 	if (!format)
 		return (-1);
+	va_start(args, format);
 	cpt = 0;
 	cpt += print_format(format, args);
 	va_end(args);
@@ -77,6 +77,7 @@ int	ft_printf(const char *format, ...)
 // 	int num = -42;
 // 	unsigned int unsignedNum = 12345;
 // 	void *ptr = &num;
+// 	char *n = NULL;
 
 // 	ft_printf("=== Testing ft_printf ===\n");
 // 	ft_printf("%%c: %c\n", c);
@@ -88,6 +89,7 @@ int	ft_printf(const char *format, ...)
 // 	ft_printf("%%x: %x\n", unsignedNum);
 // 	ft_printf("%%X: %X\n", unsignedNum);
 // 	ft_printf("%%%%: %%\n");
+// 	ft_printf("NULL%sNULL\n", n);
 
 // 	printf("=== Testing printf ===\n");
 // 	printf("%%c: %c\n", c);
@@ -99,6 +101,7 @@ int	ft_printf(const char *format, ...)
 // 	printf("%%x: %x\n", unsignedNum);
 // 	printf("%%X: %X\n", unsignedNum);
 // 	printf("%%%%: %%\n");
+// 	printf("NULL%sNULL\n", n);
 
 // 	return (0);
 // }
