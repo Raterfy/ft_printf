@@ -1,10 +1,11 @@
 NAME					= libftprintf.a
 
-SRCS					= ft_printf2.c printf_function.c
+SRCS					= ft_printf.c \
+						  printf_function.c \
+						  printf_conversion.c \
+						  printf_conversion2.c
 
 OBJS					= $(SRCS:%.c=%.o)
-
-BNS_OBJS				= $(BNS_SRCS:%.c=%.o)
 
 FLAGS					= -Wall -Wextra -Werror
 
@@ -13,10 +14,6 @@ $(NAME)		:	$(OBJS)
 			ar rc $(NAME) $(OBJS)
 
 all	:	$(NAME)
-
-bonus	:	$(NAME)
-		cc $(FLAGS) -c $(BNS_SRCS) -I./
-		ar rc $(NAME) $(BNS_OBJS)
 
 clean	:
 		rm -f $(OBJS) $(BNS_OBJS)

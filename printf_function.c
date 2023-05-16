@@ -6,12 +6,12 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 14:09:23 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:14:28 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_function.h"
-/*
+#include "printf.h"
+
 int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -19,139 +19,57 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
-	int	i;
+	size_t	i;
+	int		cpt;
 
 	i = 0;
-	while(str[i])
-		ft_putchar(str[i++]);
-	return(i);
+	cpt = 0;
+	while (str[i])
+		cpt += ft_putchar(str[i++]);
+	return (cpt);
 }
 
 int	ft_putnbr(int n)
 {
-	int cpt;
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = -n;
-		cpt++;
-	}
-	if (n && n >= 10)
-		cpt += ft_putnbr(n % 10);
-	ft_putchar(n % 10 + '0');
-	cpt++;
-	return(cpt);
-}
-
-int ft_putnbr_base(unsigned long long int n, char *base)
-{
-	int cpt = 0;
-	long int base_len = 0;
+	long long int	nbr;
+	int				cpt;
 
 	cpt = 0;
-	base_len = 0;
-	while (base[base_len])
-		base_len++;
-	if (n >= (unsigned int)base_len)
-		cpt += ft_putnbr_base(n / base_len, base);
-	ft_putchar(base[n % base_len]);
-	cpt++;
-	return cpt;
-}*/
-
-
-int	print_char(char c)
-{
-	return (write(1, &c, 1));
+	nbr = (long long int)n;
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		write (1, "-", 1);
+		cpt++;
+	}
+	if (nbr && nbr > 9)
+		cpt += ft_putnbr(nbr / 10);
+	cpt += ft_putchar (nbr % 10 + '0');
+	return (cpt);
 }
 
-int	print_str(char *str)
+int	ft_unsigned_nbr(unsigned long long int n)
 {
 	int	cpt;
 
 	cpt = 0;
-	while (*str)
-	{
-		cpt += print_char(*str);
-		str++;
-	}
+	if (n && n > 9)
+		cpt += ft_putnbr(n / 10);
+	cpt += ft_putchar (n % 10 + '0');
 	return (cpt);
 }
 
-int	print_pointer(void *ptr)
-{
-	unsigned long	adress;
-	int				cpt;
-
-	cpt = 0;
-	if (!ptr)
-		cpt += print_str("nil");
-	else
-	{
-		adress = (unsigned long)ptr;
-		cpt += print_str("0x");
-		cpt += print_hexadecimal(adress, "0123456789abcdef");
-	}
-	return (cpt);
-}
-
-int	print_decimal(int n)
-{
-	int 		cpt;
-
-	cpt = 0;
-	if (n < 0)
-	{
-		n = -n;
-		cpt += print_char('-');
-	}
-	if (n && n >= 10)
-		cpt += print_decimal(n / 10);
-	cpt += print_char(n % 10 + '0');
-	return (cpt);
-}
-
-int	print_unsigned_decimal(unsigned int n)
-{
-	int cpt;
-
-	cpt = 0;
-	if (n >= 10)
-	{
-		cpt += print_unsigned_decimal(n / 10);
-		cpt += print_char('0' + n % 10);
-	}
-	else
-		cpt += print_char(n + '0');
-	return (cpt);
-}
-
-int	print_hexadecimal(unsigned int n, const char *base)
+int	ft_putnbr_base(unsigned long long int n, char *base)
 {
 	int	cpt;
 
 	cpt = 0;
 	if (n >= 16)
 	{
-		cpt += print_hexadecimal(n / 16, base);
-		cpt += print_char(base[n % 16]);
+		cpt += ft_putnbr_base(n / 16, base);
+		cpt += ft_putchar(base[n % 16]);
 	}
 	else
-		cpt += print_char(base[n]);
-	return (cpt);
-}
-
-int ft_putnbr_base(unsigned int n, char *base)
-{
-	int cpt;
-	int base_len;
-
-	cpt = 0;
-	base_len = 0;
-	while (base[base_len])
-		base_len++;
-	if (n >= (unsigned int)base_len)
-		cpt += ft_putnbr_base(n / base_len, base);
-	cpt += print_char(base[n % base_len]);
+		cpt += ft_putchar(base[n]);
 	return (cpt);
 }
