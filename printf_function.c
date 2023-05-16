@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/15 23:33:31 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 14:09:23 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /*
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *str)
@@ -43,10 +43,10 @@ int	ft_putnbr(int n)
 	return(cpt);
 }
 
-int ft_putnbr_base(unsigned int n, char *base)
+int ft_putnbr_base(unsigned long long int n, char *base)
 {
 	int cpt = 0;
-	int base_len = 0;
+	long int base_len = 0;
 
 	cpt = 0;
 	base_len = 0;
@@ -57,8 +57,8 @@ int ft_putnbr_base(unsigned int n, char *base)
 	ft_putchar(base[n % base_len]);
 	cpt++;
 	return cpt;
-}
-*/
+}*/
+
 
 int	print_char(char c)
 {
