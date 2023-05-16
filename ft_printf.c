@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 17:13:28 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:16:37 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,35 +70,35 @@ int	ft_printf(const char *format, ...)
 	return (cpt);
 }
 
-int main()
-{
-	char c = 'A';
-	char *str = "Hey";
-	int num = -42;
-	unsigned int unsignedNum = 12345;
-	void *ptr = &num;
+// int main()
+// {
+// 	char c = 'A';
+// 	char *str = "Hey";
+// 	int num = -42;
+// 	unsigned int unsignedNum = 12345;
+// 	void *ptr = &num;
 
-	ft_printf("=== Testing ft_printf ===\n");
-	ft_printf("%%c: %c\n", c);
-	ft_printf("%%s: %s\n", str);
-	ft_printf("%%p: %p\n", ptr);
-	ft_printf("%%d: %d\n", num);
-	ft_printf("%%i: %i\n", num);
-	ft_printf("%%u: %u\n", unsignedNum);
-	ft_printf("%%x: %x\n", unsignedNum);
-	ft_printf("%%X: %X\n", unsignedNum);
-	ft_printf("%%%%: %%\n");
+// 	ft_printf("=== Testing ft_printf ===\n");
+// 	ft_printf("%%c: %c\n", c);
+// 	ft_printf("%%s: %s\n", str);
+// 	ft_printf("%%p: %p\n", ptr);
+// 	ft_printf("%%d: %d\n", num);
+// 	ft_printf("%%i: %i\n", num);
+// 	ft_printf("%%u: %u\n", unsignedNum);
+// 	ft_printf("%%x: %x\n", unsignedNum);
+// 	ft_printf("%%X: %X\n", unsignedNum);
+// 	ft_printf("%%%%: %%\n");
 
-	printf("=== Testing printf ===\n");
-	printf("%%c: %c\n", c);
-	printf("%%s: %s\n", str);
-	printf("%%p: %p\n", ptr);
-	printf("%%d: %d\n", num);
-	printf("%%i: %i\n", num);
-	printf("%%u: %u\n", unsignedNum);
-	printf("%%x: %x\n", unsignedNum);
-	printf("%%X: %X\n", unsignedNum);
-	printf("%%%%: %%\n");
+// 	printf("=== Testing printf ===\n");
+// 	printf("%%c: %c\n", c);
+// 	printf("%%s: %s\n", str);
+// 	printf("%%p: %p\n", ptr);
+// 	printf("%%d: %d\n", num);
+// 	printf("%%i: %i\n", num);
+// 	printf("%%u: %u\n", unsignedNum);
+// 	printf("%%x: %x\n", unsignedNum);
+// 	printf("%%X: %X\n", unsignedNum);
+// 	printf("%%%%: %%\n");
 
-	return (0);
-}
+// 	return (0);
+// }
