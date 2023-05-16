@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:06:35 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 16:29:37 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:13:07 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	print_s(va_list args)
 	return (cpt);
 }
 
-int print_p(va_list args)
+int	print_p(va_list args)
 {
 	int		cpt;
 	void	*ptr;
@@ -38,7 +38,7 @@ int print_p(va_list args)
 	cpt = 0;
 	ptr = va_arg(args, void *);
 	if (ptr == NULL)
-		cpt += ft_putstr("nil");
+		cpt += ft_putstr("(nil)");
 	else
 	{
 		cpt += ft_putstr("0x");
@@ -46,7 +46,6 @@ int print_p(va_list args)
 	}
 	return (cpt);
 }
-
 
 int	print_d_and_i(va_list args)
 {

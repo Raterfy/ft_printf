@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 16:42:35 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:13:28 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,51 +70,35 @@ int	ft_printf(const char *format, ...)
 	return (cpt);
 }
 
-int	main(void)
+int main()
 {
-	printf(NULL);
-	ft_printf(NULL);
-	
-	// char c = 'c';
-	// char str[] = "je mange";
-	// int num = 42;
-    // int *ptr = &num;
-	// int d = -100;
-	// int i = 92013;
-	// unsigned int x = 42;
-	// unsigned int X = 255;
+	char c = 'A';
+	char *str = "Hey";
+	int num = -42;
+	unsigned int unsignedNum = 12345;
+	void *ptr = &num;
 
-	// printf("_______%%c_______\n");
-	// printf("Expected: %c\n", c);
-	// ft_printf("%c\n", c);
+	ft_printf("=== Testing ft_printf ===\n");
+	ft_printf("%%c: %c\n", c);
+	ft_printf("%%s: %s\n", str);
+	ft_printf("%%p: %p\n", ptr);
+	ft_printf("%%d: %d\n", num);
+	ft_printf("%%i: %i\n", num);
+	ft_printf("%%u: %u\n", unsignedNum);
+	ft_printf("%%x: %x\n", unsignedNum);
+	ft_printf("%%X: %X\n", unsignedNum);
+	ft_printf("%%%%: %%\n");
 
-	// printf("_______%%s_______\n");
-	// printf("Expected: %s\n", str);
-	// ft_printf("%s\n", str);
+	printf("=== Testing printf ===\n");
+	printf("%%c: %c\n", c);
+	printf("%%s: %s\n", str);
+	printf("%%p: %p\n", ptr);
+	printf("%%d: %d\n", num);
+	printf("%%i: %i\n", num);
+	printf("%%u: %u\n", unsignedNum);
+	printf("%%x: %x\n", unsignedNum);
+	printf("%%X: %X\n", unsignedNum);
+	printf("%%%%: %%\n");
 
-    // printf("_______%%p_______\n");
-    // printf("Expected: %p\n", ptr);
-	// ft_printf("%p\n", ptr);
-
-	// printf("_______%%d_______\n");
-	// printf("Expected: %d\n", d);
-	// ft_printf("%d\n", d);
-
-	// printf("_______%%i_______\n");
-	// printf("Expected: %i\n", i);
-	// ft_printf("%i\n", i);
-
-	// printf("_______%%x_______\n");
-	// printf("Expected: %x\n", x);
-	// ft_printf("%x\n", x);
-
-	// printf("_______%%X_______\n");
-	// printf("Expected: %X\n", X);
-	// ft_printf("%X\n", X);
-
-	// printf("_______%%%%_______\n");
-	// printf("Expected: %%\n");
-	// ft_printf("%%\n");
-
-	return 0;
+	return (0);
 }
