@@ -6,17 +6,29 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 17:27:58 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 19:17:36 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+/*
+ * ft_putchar - Écrit un caractère sur la sortie standard.
+ * @c: Le caractère à écrire.
+ *
+ * Retourne: Le nombre de caractères écrits (toujours 1).
+ */
 int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
+/*
+ * ft_putstr - Écrit une chaîne de caractères sur la sortie standard.
+ * @str: La chaîne de caractères à écrire.
+ *
+ * Retourne: Le nombre de caractères écrits.
+ */
 int	ft_putstr(char *str)
 {
 	size_t	i;
@@ -29,6 +41,12 @@ int	ft_putstr(char *str)
 	return (cpt);
 }
 
+/*
+ * ft_putnbr - Écrit un entier sur la sortie standard.
+ * @n: L'entier à écrire.
+ *
+ * Retourne: Le nombre de caractères écrits.
+ */
 int	ft_putnbr(int n)
 {
 	long long int	nbr;
@@ -48,6 +66,12 @@ int	ft_putnbr(int n)
 	return (cpt);
 }
 
+/*
+ * ft_unsigned_nbr - Écrit un entier non signé sur la sortie standard.
+ * @n: L'entier non signé à écrire.
+ *
+ * Retourne: Le nombre de caractères écrits.
+ */
 int	ft_unsigned_nbr(unsigned long long int n)
 {
 	int	cpt;
@@ -59,6 +83,13 @@ int	ft_unsigned_nbr(unsigned long long int n)
 	return (cpt);
 }
 
+/*
+ * ft_putnbr_base - Écrit un entier non signé en base 16 sur la sortie standard.
+ * @n: L'entier non signé à écrire.
+ * @base: La chaîne de caractères représentant les chiffres de la base.
+ *
+ * Retourne: Le nombre de caractères écrits.
+ */
 int	ft_putnbr_base(unsigned long long int n, char *base)
 {
 	int	cpt;

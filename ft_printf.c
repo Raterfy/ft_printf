@@ -6,12 +6,20 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/20 13:54:11 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 19:16:46 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+/*
+ * print_format2 - Appelle la fonction d'impression appropriée 
+ * en fonction du caractère  de format spécifié.
+ * @format: Le caractère de format spécifiant le type d'argument à imprimer.
+ * @args: La liste d'arguments contenant l'argument à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_format2(const char format, va_list args)
 {
 	if (format == 'c')
@@ -33,8 +41,14 @@ int	print_format2(const char format, va_list args)
 	return (0);
 }
 
-//printf de null renvoie -1
-
+/*
+ * print_format - Parcourt la chaîne de format et appelle la 
+ * fonction d'impression appropriée pour chaque caractère de format rencontré.
+ * @format: La chaîne de format spécifiant les types d'arguments à imprimer.
+ * @args: La liste d'arguments contenant les arguments à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_format(const char *format, va_list args)
 {
 	int	i;
@@ -56,6 +70,14 @@ int	print_format(const char *format, va_list args)
 	return (cpt);
 }
 
+/*
+ * print_format - Parcourt la chaîne de format et appelle la fonction 
+ * d'impression appropriée pour chaque caractère de format rencontré.
+ * @format: La chaîne de format spécifiant les types d'arguments à imprimer.
+ * @args: La liste d'arguments contenant les arguments à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	ft_printf(const char *format, ...)
 {
 	int		cpt;
@@ -70,6 +92,7 @@ int	ft_printf(const char *format, ...)
 	return (cpt);
 }
 
+//printf de null renvoie -1
 // int main()
 // {
 // 	char c = 'A';

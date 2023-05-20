@@ -6,12 +6,18 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:06:35 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 17:45:13 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 19:17:14 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+/*
+ * print_c - Imprime un caractère passé en argument.
+ * @args: La liste d'arguments contenant le caractère à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés (toujours 1).
+ */
 int	print_c(va_list args)
 {
 	int	cpt;
@@ -21,6 +27,12 @@ int	print_c(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_s - Imprime une chaîne de caractères passée en argument.
+ * @args: La liste d'arguments contenant la chaîne de caractères à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_s(va_list args)
 {
 	int		cpt;
@@ -35,6 +47,12 @@ int	print_s(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_p - Imprime une adresse mémoire passée en argument.
+ * @args: La liste d'arguments contenant l'adresse mémoire à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_p(va_list args)
 {
 	int		cpt;
@@ -52,6 +70,12 @@ int	print_p(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_d_and_i - Imprime un entier signé passé en argument.
+ * @args: La liste d'arguments contenant l'entier signé à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_d_and_i(va_list args)
 {
 	int	cpt;
@@ -61,6 +85,12 @@ int	print_d_and_i(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_u - Imprime un entier non signé passé en argument.
+ * @args: La liste d'arguments contenant l'entier non signé à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_u(va_list args)
 {
 	int	cpt;

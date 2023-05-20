@@ -6,12 +6,19 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:07:15 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/16 17:27:55 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 19:17:20 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+/*
+ * print_x - Imprime un entier non signé en base 16 (minuscules) 
+ * passé en argument.
+ * @args: La liste d'arguments contenant l'entier non signé à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_x(va_list args)
 {
 	int	cpt;
@@ -22,6 +29,13 @@ int	print_x(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_upper_x - Imprime un entier non signé en base 16 (majuscules) 
+ * passé en argument.
+ * @args: La liste d'arguments contenant l'entier non signé à imprimer.
+ *
+ * Retourne: Le nombre de caractères imprimés.
+ */
 int	print_upper_x(va_list args)
 {
 	int	cpt;
@@ -32,6 +46,11 @@ int	print_upper_x(va_list args)
 	return (cpt);
 }
 
+/*
+ * print_percent - Imprime le caractère '%'.
+ *
+ * Retourne: Le nombre de caractères imprimés (toujours 1).
+ */
 int	print_percent(void)
 {
 	return (ft_putchar('%'));
