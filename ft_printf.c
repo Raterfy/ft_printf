@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/20 19:16:46 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 20:01:59 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_format2(const char format, va_list args)
+int	print_format(const char format, va_list args)
 {
 	if (format == 'c')
 		return (print_c(args));
@@ -42,18 +42,21 @@ int	print_format2(const char format, va_list args)
 }
 
 /*
- * print_format - Parcourt la chaîne de format et appelle la 
- * fonction d'impression appropriée pour chaque caractère de format rencontré.
+ * ft_printf - Imprime des arguments formatés à l'écran.
  * @format: La chaîne de format spécifiant les types d'arguments à imprimer.
- * @args: La liste d'arguments contenant les arguments à imprimer.
+ * @...: Les arguments à imprimer.
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_format(const char *format, va_list args)
+int	ft_printf(const char *format, ...)
 {
-	int	i;
-	int	cpt;
+	int		cpt;
+	int		i;
+	va_list	args;
 
+	if (!format)
+		return (-1);
+	va_start(args, format);
 	cpt = 0;
 	i = 0;
 	while (format[i])
@@ -61,38 +64,17 @@ int	print_format(const char *format, va_list args)
 		if (format[i] == '%')
 		{
 			i++;
-			cpt += print_format2(format[i], args);
+			cpt += print_format(format[i], args);
 		}
 		else
 			cpt += ft_putchar(format[i]);
 		i++;
 	}
-	return (cpt);
-}
-
-/*
- * print_format - Parcourt la chaîne de format et appelle la fonction 
- * d'impression appropriée pour chaque caractère de format rencontré.
- * @format: La chaîne de format spécifiant les types d'arguments à imprimer.
- * @args: La liste d'arguments contenant les arguments à imprimer.
- *
- * Retourne: Le nombre de caractères imprimés.
- */
-int	ft_printf(const char *format, ...)
-{
-	int		cpt;
-	va_list	args;
-
-	if (!format)
-		return (-1);
-	va_start(args, format);
-	cpt = 0;
-	cpt += print_format(format, args);
 	va_end(args);
 	return (cpt);
 }
 
-//printf de null renvoie -1
+// printf de null renvoie -1
 // int main()
 // {
 // 	char c = 'A';
