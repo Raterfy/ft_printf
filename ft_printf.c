@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/20 20:01:59 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/20 20:37:36 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_printf(const char *format, ...)
 			cpt += print_format(format[i], args);
 		}
 		else
-			cpt += ft_putchar(format[i]);
+			cpt += write(1, &format[i], 1);
 		i++;
 	}
 	va_end(args);
@@ -95,6 +95,7 @@ int	ft_printf(const char *format, ...)
 // 	ft_printf("%%X: %X\n", unsignedNum);
 // 	ft_printf("%%%%: %%\n");
 // 	ft_printf("NULL%sNULL\n", n);
+// 	ft_printf("je mange\n\n");
 
 // 	printf("=== Testing printf ===\n");
 // 	printf("%%c: %c\n", c);
@@ -107,6 +108,7 @@ int	ft_printf(const char *format, ...)
 // 	printf("%%X: %X\n", unsignedNum);
 // 	printf("%%%%: %%\n");
 // 	printf("NULL%sNULL\n", n);
+// 	printf("je mange\n");
 
 // 	return (0);
 // }
