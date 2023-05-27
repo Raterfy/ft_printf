@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:07:15 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/25 13:05:47 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/27 12:21:54 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_x(va_list args)
+size_t	print_x(va_list args)
 {
 	int	cpt;
 
@@ -36,7 +36,7 @@ int	print_x(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_upper_x(va_list args)
+size_t	print_upper_x(va_list args)
 {
 	int	cpt;
 
@@ -51,7 +51,7 @@ int	print_upper_x(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés (toujours 1).
  */
-int	print_percent(void)
+size_t	print_percent(void)
 {
 	return (ft_putchar('%'));
 }

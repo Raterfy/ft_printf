@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:06:35 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/25 13:05:40 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/27 12:21:34 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * Retourne: Le nombre de caractères imprimés (toujours 1).
  */
-int	print_c(va_list args)
+size_t	print_c(va_list args)
 {
 	int	cpt;
 
@@ -33,7 +33,7 @@ int	print_c(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_s(va_list args)
+size_t	print_s(va_list args)
 {
 	int		cpt;
 	char	*str;
@@ -53,7 +53,7 @@ int	print_s(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_p(va_list args)
+size_t	print_p(va_list args)
 {
 	int		cpt;
 	void	*ptr;
@@ -76,7 +76,7 @@ int	print_p(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_d_and_i(va_list args)
+size_t	print_d_and_i(va_list args)
 {
 	int	cpt;
 
@@ -91,7 +91,7 @@ int	print_d_and_i(va_list args)
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_u(va_list args)
+size_t	print_u(va_list args)
 {
 	int	cpt;
 

@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:43 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/25 13:05:53 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/27 12:23:56 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * Retourne: Le nombre de caractères écrits (toujours 1).
  */
-int	ft_putchar(char c)
+size_t	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
@@ -29,7 +29,7 @@ int	ft_putchar(char c)
  *
  * Retourne: Le nombre de caractères écrits.
  */
-int	ft_putstr(char *str)
+size_t	ft_putstr(char *str)
 {
 	size_t	i;
 	int		cpt;
@@ -47,7 +47,7 @@ int	ft_putstr(char *str)
  *
  * Retourne: Le nombre de caractères écrits.
  */
-int	ft_putnbr(int n)
+size_t	ft_putnbr(int n)
 {
 	long long int	nbr;
 	int				cpt;
@@ -72,7 +72,7 @@ int	ft_putnbr(int n)
  *
  * Retourne: Le nombre de caractères écrits.
  */
-int	ft_unsigned_nbr(unsigned long long int n)
+size_t	ft_unsigned_nbr(unsigned long long int n)
 {
 	int	cpt;
 
@@ -90,7 +90,7 @@ int	ft_unsigned_nbr(unsigned long long int n)
  *
  * Retourne: Le nombre de caractères écrits.
  */
-int	ft_putnbr_base(unsigned long long int n, char *base)
+size_t	ft_putnbr_base(unsigned long long int n, char *base)
 {
 	int	cpt;
 

@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/25 13:05:18 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/27 12:26:41 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  *
  * Retourne: Le nombre de caractères imprimés.
  */
-int	print_format(const char format, va_list args)
+size_t	print_format(const char format, va_list args)
 {
 	if (format == 'c')
 		return (print_c(args));
