@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:26:39 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/27 12:27:19 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/31 23:16:08 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ size_t	print_x(va_list args);
 size_t	print_upper_x(va_list args);
 size_t	print_percent(void);
 size_t	print_format(const char format, va_list args);
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 #endif

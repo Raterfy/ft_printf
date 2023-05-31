@@ -6,7 +6,7 @@
 /*   By: robhak <robhak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:45:42 by robhak            #+#    #+#             */
-/*   Updated: 2023/05/27 12:26:41 by robhak           ###   ########.fr       */
+/*   Updated: 2023/05/31 23:15:20 by robhak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int	ft_printf(const char *format, ...)
 // 	ft_printf("NULL%sNULL\n", n);
 // 	ft_printf("je mange\n");
 // 	ft_printf("%d\n", ft_printf(NULL));
-// 	ft_printf("%x\n",9223372036854775807LL);
 
 // 	printf("=== Testing printf ===\n");
 // 	printf("%%c: %c\n", c);
@@ -112,7 +111,6 @@ int	ft_printf(const char *format, ...)
 // 	printf("NULL%sNULL\n", n);
 // 	printf("je mange\n");
 // 	printf("%d\n",printf(NULL));
-// 	printf("%llx\n",9223372036854775807LL);
 
 // 	return (0);
 // }
