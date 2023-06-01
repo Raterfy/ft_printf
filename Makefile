@@ -9,14 +9,14 @@ OBJS					= $(SRCS:%.c=%.o)
 
 FLAGS					= -Wall -Wextra -Werror
 
-$(NAME)		:	$(OBJS)
+$(NAME)		:	$(OBJS) ft_printf.h
 			cc $(FLAGS) -c $(SRCS) -I./
 			ar rc $(NAME) $(OBJS)
 
 all	:	$(NAME)
 
 clean	:
-		rm -f $(OBJS) $(BNS_OBJS)
+		rm -f $(OBJS)
 
 fclean	:	clean
 		rm -f $(NAME)
